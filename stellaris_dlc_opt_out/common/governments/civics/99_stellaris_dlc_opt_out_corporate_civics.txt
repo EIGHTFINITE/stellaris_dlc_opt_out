@@ -69,8 +69,6 @@ civic_environmental_architects_megacorp = {
 }
 
 civic_corporate_hyperspace_specialty = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_corporate_hyperspace_specialty_effects"
 	potential = {
 		OR = {
@@ -104,8 +102,6 @@ civic_corporate_hyperspace_specialty = {
 }
 
 civic_corporate_dimensional_worship = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_corporate_dimensional_worship_effects"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
@@ -132,8 +128,6 @@ civic_corporate_dimensional_worship = {
 }
 
 civic_corporate_dark_consortium = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_corporate_dark_consortium_effects"
 	potential = {
 		OR = {
@@ -176,8 +170,6 @@ civic_corporate_dark_consortium = {
 }
 
 civic_corporate_sovereign_guardianship = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_corporate_sovereign_guardianship_effects"
 	potential = {
 		ethics = {

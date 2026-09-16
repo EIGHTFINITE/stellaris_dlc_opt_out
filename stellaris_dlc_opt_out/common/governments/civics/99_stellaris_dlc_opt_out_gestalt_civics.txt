@@ -80,8 +80,6 @@ civic_environmental_architects_machine = {
 }
 
 civic_hive_hyperspace_specialty = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_hive_hyperspace_specialty_effects"
 	potential = {
 		authority = { value = auth_hive_mind }
@@ -99,8 +97,6 @@ civic_hive_hyperspace_specialty = {
 }
 
 civic_hive_sovereign_guardianship = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_hive_sovereign_guardianship_effects"
 	potential = {
 		authority = { value = auth_hive_mind }
@@ -137,8 +133,6 @@ civic_hive_sovereign_guardianship = {
 }
 
 civic_machine_hyperspace_specialty = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_machine_hyperspace_specialty_effects"
 	potential = { authority = { value = auth_machine_intelligence } }
 	possible = {
@@ -154,8 +148,6 @@ civic_machine_hyperspace_specialty = {
 }
 
 civic_machine_sovereign_guardianship = {
-	playable = { has_astral_planes_dlc = yes }
-	ai_playable = { has_astral_planes_dlc = yes }
 	description = "civic_machine_sovereign_guardianship_effects"
 	potential = {
 		authority = { value = auth_machine_intelligence }
