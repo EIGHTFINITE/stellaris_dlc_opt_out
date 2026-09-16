@@ -1,0 +1,79 @@
+civic_environmental_architects = {
+	playable = {
+		has_cosmic_storms_dlc = yes
+	}
+	ai_playable = {
+		has_cosmic_storms_dlc = yes
+	}
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				value = civic_environmental_architects_megacorp
+				value = civic_environmentalist
+			}
+			NOR = {
+				text = civic_tooltip_not_mutagenic
+				value = civic_toxic_baths
+				value = civic_toxic_baths_individual_machine
+				value = civic_corporate_toxic_baths
+				value = civic_corporate_toxic_baths_individual_machine
+				value = civic_hive_toxic_baths
+				value = civic_machine_toxic_baths
+			}
+			NOR = {
+				text = civic_tooltip_not_relentless_industrialists
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+			}
+		}
+		origin = {
+			NOR = {
+				value = origin_remnants
+				value = origin_post_apocalyptic
+				value = origin_post_apocalyptic_machines
+				value = origin_void_dwellers
+				value = origin_void_machines
+				value = origin_shattered_ring
+				value = origin_lithoid
+				value = origin_machine
+				value = origin_unplugged
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_environmental_architects_megacorp
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_environmental_architects_megacorp
+	random_weight = {
+		base = @civic_default_random_weight
+	}
+	description = civic_environmental_architects_effect_tooltip
+	negative_description = civic_environmental_architects_negative_effect_tooltip
+	modifier = {
+		planet_jobs_produces_mult = 0.1
+		founder_species_growth_mult = 0.1
+		planet_pops_upkeep_mult = -0.15
+		planet_clear_blocker_speed_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+}
