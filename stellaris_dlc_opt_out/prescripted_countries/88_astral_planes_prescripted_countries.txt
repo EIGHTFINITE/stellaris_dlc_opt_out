@@ -87,8 +87,6 @@ guardianship_of_nyrr = {
 	spawn_enabled = no
 	ignore_portrait_duplication = yes
 
-	playable = has_astral_planes_dlc
-
 	species = {
 		class = REP
 		portrait = rep14
