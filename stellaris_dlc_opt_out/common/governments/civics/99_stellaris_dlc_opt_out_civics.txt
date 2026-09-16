@@ -243,8 +243,6 @@ civic_sovereign_guardianship = {
 
 civic_flight_schools = {
 	modification = yes
-	playable = { has_nomads_dlc = yes }
-	ai_playable = { has_nomads_dlc = yes }
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
