@@ -240,3 +240,39 @@ civic_sovereign_guardianship = {
 		base = @civic_rare_random_weight
 	}
 }
+
+civic_flight_schools = {
+	modification = yes
+	playable = { has_nomads_dlc = yes }
+	ai_playable = { has_nomads_dlc = yes }
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+		civics = { NOT = { value = civic_corporate_flight_schools } }
+	}
+	possible = {}
+	description = "civic_flight_schools_effect_tooltip"
+	alternate_civic_version = civic_corporate_flight_schools
+
+	swap_type = {
+		description = "civic_flight_schools_effect_nomadic_tooltip"
+
+		trigger = {
+			exists = this
+			is_nomadic = yes
+		}
+	}
+
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	ai_weight = {
+		base = @civic_rare_random_weight
+	}
+
+	modifier = {
+		weapon_type_strike_craft_speed_mult = 0.1
+		ship_speed_mult = 0.2
+	}
+}
+
