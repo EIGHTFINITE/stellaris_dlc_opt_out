@@ -78,3 +78,112 @@ civic_environmental_architects_machine = {
 		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
 }
+
+civic_hive_hyperspace_specialty = {
+	playable = { has_astral_planes_dlc = yes }
+	ai_playable = { has_astral_planes_dlc = yes }
+	description = "civic_hive_hyperspace_specialty_effects"
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		civics = { NOT = { value = civic_hive_stargazers } }
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+		ship_speed_mult = 0.1
+		country_physics_tech_research_speed = 0.15
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+}
+
+civic_hive_sovereign_guardianship = {
+	playable = { has_astral_planes_dlc = yes }
+	ai_playable = { has_astral_planes_dlc = yes }
+	description = "civic_hive_sovereign_guardianship_effects"
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				value = civic_hive_devouring_swarm
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+
+	modification = no
+
+	modifier = {
+		empire_size_colonies_mult = 0.75
+		empire_size_systems_mult = 1.50
+		empire_size_pops_mult = -0.25
+		empire_size_districts_mult = -0.50
+		diplo_weight_mult = 0.2
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+		planet_soldiers_unity_produces_add = @sovereign_guardianship_soldier_unity
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	ai_weight = {
+		base = @civic_rare_random_weight
+	}
+}
+
+civic_machine_hyperspace_specialty = {
+	playable = { has_astral_planes_dlc = yes }
+	ai_playable = { has_astral_planes_dlc = yes }
+	description = "civic_machine_hyperspace_specialty_effects"
+	potential = { authority = { value = auth_machine_intelligence } }
+	possible = {
+		civics = { NOT = { value = civic_machine_exploration_protocol } }
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+		ship_speed_mult = 0.1
+		country_physics_tech_research_speed = 0.15
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+}
+
+civic_machine_sovereign_guardianship = {
+	playable = { has_astral_planes_dlc = yes }
+	ai_playable = { has_astral_planes_dlc = yes }
+	description = "civic_machine_sovereign_guardianship_effects"
+	potential = {
+		authority = { value = auth_machine_intelligence }
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOT = { value = civic_machine_terminator }
+		}
+	}
+
+	modification = no
+
+	modifier = {
+		empire_size_colonies_mult = 0.75
+		empire_size_systems_mult = 1.50
+		empire_size_pops_mult = -0.25
+		empire_size_districts_mult = -0.50
+		diplo_weight_mult = 0.2
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+		planet_soldiers_unity_produces_add = @sovereign_guardianship_soldier_unity
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	ai_weight = {
+		base = @civic_rare_random_weight
+	}
+}
