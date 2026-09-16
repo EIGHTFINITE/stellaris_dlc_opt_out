@@ -1,10 +1,4 @@
 civic_environmental_architects_hive = {
-	playable = {
-		has_cosmic_storms_dlc = yes
-	}
-	ai_playable = {
-		has_cosmic_storms_dlc = yes
-	}
 	potential = {
 		authority = {
 			value = auth_hive_mind
@@ -46,12 +40,6 @@ civic_environmental_architects_hive = {
 }
 
 civic_environmental_architects_machine = {
-	playable = {
-		has_cosmic_storms_dlc = yes
-	}
-	ai_playable = {
-		has_cosmic_storms_dlc = yes
-	}
 	potential = {
 		authority = {
 			value = auth_machine_intelligence

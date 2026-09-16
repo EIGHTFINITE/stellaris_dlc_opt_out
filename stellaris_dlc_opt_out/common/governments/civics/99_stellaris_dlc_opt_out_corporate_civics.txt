@@ -1,10 +1,4 @@
 civic_environmental_architects_megacorp = {
-	playable = {
-		has_cosmic_storms_dlc = yes
-	}
-	ai_playable = {
-		has_cosmic_storms_dlc = yes
-	}
 	potential = {
 		OR = {
 			authority = {
