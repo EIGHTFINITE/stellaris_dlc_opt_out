@@ -485,12 +485,6 @@ humanoids = {
 	}
 
 	conditional_portraits = {
-		randomizable = {
-			host_has_dlc = "Astral Planes"
-		}
-		playable = {
-			local_has_dlc = "Astral Planes"
-		}
 		portraits = {
 			"humanoid_hp_16"
 		}
