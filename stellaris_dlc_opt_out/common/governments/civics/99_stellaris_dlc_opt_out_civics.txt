@@ -1,3 +1,41 @@
+civic_storm_callers = {
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_storm_callers_megacorp
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_storm_callers_megacorp
+	playable = { has_cosmic_storms_dlc = yes }
+	ai_playable = {	has_cosmic_storms_dlc = yes }
+	description = "civic_storm_callers_effect_tooltip"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		origin = {
+			NOT = {
+				value = origin_unplugged
+			}
+		}
+	}
+	traits = {
+		trait = trait_storm_touched
+	}
+	modifier = {
+		capital_storm_diplo_weight_mult = 0.20
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+	random_weight = {
+		base = @civic_default_random_weight
+	}
+}
+
 civic_environmental_architects = {
 	potential = {
 		ethics = {
