@@ -10,8 +10,6 @@ civic_storm_callers = {
 		}
 	}
 	alternate_civic_version = civic_storm_callers_megacorp
-	playable = { has_cosmic_storms_dlc = yes }
-	ai_playable = {	has_cosmic_storms_dlc = yes }
 	description = "civic_storm_callers_effect_tooltip"
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }

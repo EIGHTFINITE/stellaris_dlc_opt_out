@@ -10,8 +10,6 @@ civic_storm_callers_megacorp = {
 		}
 	}
 	alternate_civic_version = civic_storm_callers
-	playable = { has_cosmic_storms_dlc = yes }
-	ai_playable = { has_cosmic_storms_dlc = yes }
 	description = "civic_storm_callers_megacorp_effect_tooltip"
 	potential = {
 		OR = {
