@@ -6409,35 +6409,6 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-
-	trigger = {
-		mid_game_years_passed > 0
-		NOT = { has_origin = origin_treasure_hunters }
-	}
-
-	immediate = {
-		set_variable_to_random_value = {
-			which = local_roll
-			min = 0
-			max = 100
-		}
-		if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = trigger:acquired_specimen_count
-					add = 3
-					value > local_roll
-				}
-			}
-			if = {
-				limit = { is_nomadic = yes }
-				country_event = { id = grand_archive.6011 days = 0 random = 360 }
-			}
-			else = {
-				country_event = { id = grand_archive.6010 days = 0 random = 360 }
-			}
-		}
-	}
 }
 
 # Treasure Trove discovered
