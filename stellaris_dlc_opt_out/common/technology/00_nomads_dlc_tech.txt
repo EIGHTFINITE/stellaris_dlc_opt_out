@@ -736,8 +736,7 @@ tech_dyson_gun = {
     prerequisites = { "tech_wormhole_stabilization" "tech_lasers_3" }
 
     potential = {
-        has_nomads_dlc = yes
-        is_nomadic = no
+        always = no
     }
 
     weight_modifier = {
