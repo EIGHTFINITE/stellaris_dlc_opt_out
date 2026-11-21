@@ -2230,31 +2230,11 @@ carrier_event = {
 	title = "origin.70.name"
 	desc = {
 		trigger = {
-			has_nomads_dlc = yes
-			owner = {
-				NOT = { has_ethic = ethic_gestalt_consciousness }
-				is_homicidal = no
-			}
-		}
-		text = "origin.70.desc.embark"
-	}
-	desc = {
-		trigger = {
 			owner = {
 				NOT = { has_ethic = ethic_gestalt_consciousness }
 			}
 		}
 		text = "origin.70.desc"
-	}
-	desc = {
-		trigger = {
-			has_nomads_dlc = yes
-			owner = {
-				has_ethic = ethic_gestalt_consciousness
-				is_homicidal = no
-			}
-		}
-		text = "origin.70.2.desc.embark"
 	}
 	desc = {
 		trigger = {
@@ -2296,32 +2276,6 @@ carrier_event = {
 		name = origin_70.b
 		trigger = {
 			owner = { is_machine_empire = yes }
-		}
-		tooltip = {
-			add_planet_devastation = 20
-			add_modifier = {
-				modifier = doomsday_4
-			}
-		}
-	}
-
-	option = {
-		name = origin_70.c
-		trigger = {
-			has_nomads_dlc = yes
-			owner = {
-				is_homicidal = no
-				NOT = { has_country_flag = doomsday_embark_unlocked }
-			}
-		}
-		custom_tooltip = origin_70.c.tooltip
-		hidden_effect = {
-			owner = {
-				set_country_flag = doomsday_embark_unlocked
-			}
-		}
-		add_modifier = {
-			modifier = doomsday_arkship_preparation
 		}
 		tooltip = {
 			add_planet_devastation = 20
@@ -2402,26 +2356,6 @@ carrier_event = {
 
 	immediate = {
 		carrier_event = { id = origin.80 days = 260 random = 80 }
-		if = {
-			limit = {
-				has_nomads_dlc = yes
-				owner = { # 80% chance the AI gets to live
-					is_ai = yes
-					num_owned_planets = 1
-				}
-			}
-			random_list = {
-				20 = {
-				}
-				80 = {
-					owner = {
-						set_country_flag = doomsday_embark_unlocked
-						save_event_target_as = player_country
-						country_event = { id = nomads.4710 }
-					}
-				}
-			}
-		}
 	}
 
 	option = {
