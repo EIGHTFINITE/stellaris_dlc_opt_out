@@ -1241,24 +1241,8 @@ country_event = {
 
 country_event = {
 	id = astral_planes.110
-	title = astral_planes.110.name
-	desc = astral_planes.110.desc
-	picture = GFX_evt_astral_rift
-	show_sound = event_space_cloud
+	hide_window = yes
 	is_triggered_only = yes
-
-	trigger = {
-		has_astral_planes_dlc = yes
-		last_increased_tech = "tech_astral_harvesting"
-		NOR = {
-			has_origin = origin_riftworld
-			has_country_flag = cosmogenesis_empire_has_won
-		}
-	}
-
-	option = {
-		name = FASCINATING
-	}
 }
 
 ship_event = {
