@@ -18,7 +18,7 @@ black_hole_nomad_init = {
 		radius = 165
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system
@@ -404,7 +404,7 @@ blue_giant_nomad_init = {
 		radius = 210
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system
@@ -743,7 +743,7 @@ xray_binary_nomad_init = {
 		radius = 110
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system
@@ -1104,7 +1104,7 @@ protoplanetary_nomad_init = {
 		radius = 90
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system
@@ -1453,7 +1453,7 @@ neutron_star_nomad_init = {
 		radius = 155
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system
@@ -1781,7 +1781,7 @@ twin_blue_star_nomad_init = {
 		radius = 240
 	}
 
-	usage = nomad_init
+	usage = origin
 
 	flags = {
 		empire_home_system

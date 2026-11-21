@@ -659,7 +659,7 @@ vela_system = {
 
 	flags = { empire_home_system vela_system }
 
-	usage = nomad_init
+	usage = origin
 
 	planet = {
 		name = "NAME_Vela"
