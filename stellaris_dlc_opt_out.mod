@@ -1,4 +1,4 @@
-name="Civics with DLC disabled"
+name="Disable DLC features"
 tags={
 	"Balance"
 	"Fixes"
