@@ -17,6 +17,7 @@ tech_rift_sphere = {
 
 	potential = {
 		has_astral_planes_dlc = yes
+		has_origin = origin_riftworld
 	}
 }
 
@@ -28,10 +29,6 @@ tech_astral_harvesting = {
 	category = { particles }
 	is_rare = no
 	weight = @tier2weight1
-
-	feature_flags = {
-		unlock_astral_threads_actions
-	}
 
 	potential = {
 		has_astral_planes_dlc = yes
