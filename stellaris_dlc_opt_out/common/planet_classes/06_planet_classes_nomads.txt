@@ -68,7 +68,6 @@ pc_ark = {
 	}
 
 	climate = "artificial"
-	initial = yes
 
 	auto_trait_prio = {
 		trait_auto_pc_ark_preference
