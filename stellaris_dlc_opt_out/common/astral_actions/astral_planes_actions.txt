@@ -21,6 +21,18 @@ action_astral_boost = {
 	cooldown = @ASTRAL_ACTION_5_YEARS_COOLDOWN
 	picture = GFX_astral_action_astral_boost
 
+	allow_unlock = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
 	effect = {
 		add_modifier = {
 			modifier = "astral_boost_modifier"
@@ -35,11 +47,7 @@ action_astral_boost = {
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 100
-			is_at_war = yes
-		}
+		weight = 0
 	}
 }
 
@@ -57,13 +65,16 @@ action_quantum_catapult_insight = {
 
 	picture = GFX_astral_action_quantum_catapult_insight
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		has_overlord_dlc = yes
-		is_nomadic = no
-		NOR = {
-			has_technology = tech_quantum_catapult
-			has_tech_option = tech_quantum_catapult
-		}
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -77,7 +88,7 @@ action_quantum_catapult_insight = {
 	}
 
 	ai_weight = {
-		weight = 1000
+		weight = 0
 	}
 }
 
@@ -94,22 +105,16 @@ action_quantum_catapult_insight_2 = {
 
 	picture = GFX_astral_action_quantum_catapult_insight
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		has_overlord_dlc = yes
-		is_nomadic = no
-		OR = {
-			has_technology = tech_quantum_catapult
-			has_tech_option = tech_quantum_catapult
-		}
+		always = no
 	}
 
 	allow = {
-		custom_tooltip = {
-			fail_text = "action_quantum_catapult_insight_2_requirement_tooltip"
-			any_owned_megastructure = {
-				is_functional_quantum_catapult_megastructure = yes
-			}
-		}
+		always = no
 	}
 
 	effect = {
@@ -119,7 +124,7 @@ action_quantum_catapult_insight_2 = {
 	}
 
 	ai_weight = {
-		weight = 1000
+		weight = 0
 	}
 }
 
@@ -137,12 +142,16 @@ action_exodus_jump_insight = {
 
 	picture = GFX_astral_action_quantum_catapult_insight
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		is_nomadic = yes
-		NOR = {
-			has_technology = tech_arkship_exodus_jump
-			has_tech_option = tech_arkship_exodus_jump
-		}
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -156,7 +165,7 @@ action_exodus_jump_insight = {
 	}
 
 	ai_weight = {
-		weight = 1000
+		weight = 0
 	}
 }
 
@@ -173,24 +182,16 @@ action_exodus_jump_insight_2 = {
 
 	picture = GFX_astral_action_quantum_catapult_insight
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		is_nomadic = yes
-		OR = {
-			has_technology = tech_arkship_exodus_jump
-			has_tech_option = tech_arkship_exodus_jump
-		}
+		always = no
 	}
 
 	allow = {
-		custom_tooltip = {
-			fail_text = "action_exodus_jump_insight_2_requirement_tooltip"
-			any_owned_fleet = {
-				is_arkship_fleet = yes
-				starbase? = {
-					has_starbase_module = arkship_exodus_jump
-				}
-			}
-		}
+		always = no
 	}
 
 	effect = {
@@ -200,7 +201,7 @@ action_exodus_jump_insight_2 = {
 	}
 
 	ai_weight = {
-		weight = 1000
+		weight = 0
 	}
 }
 
@@ -218,7 +219,15 @@ action_summon_dimensional_fleet = {
 	picture = GFX_astral_action_summon_dimensional_fleet
 
 	allow_unlock = {
-		has_technology = tech_psionic_theory
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -271,15 +280,7 @@ action_summon_dimensional_fleet = {
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 10
-			is_militarist = yes
-		}
-		modifier = {
-			factor = 100
-			is_at_war = yes
-		}
+		weight = 0
 	}
 }
 
@@ -298,37 +299,15 @@ action_astral_splitting = {
 	picture = GFX_astral_action_astral_splitting
 
 	allow_unlock = {
-		has_technology = tech_rift_sphere
+		always = no
+	}
+
+	potential = {
+		always = no
 	}
 
 	allow = {
-		custom_tooltip = {
-			fail_text = "action_astral_splitting_too_many_rifts"
-			check_variable = {
-				which = num_rifts_splitted
-				value < 4
-			}
-			is_astral_rift_pool_empty = no
-		}
-		custom_tooltip = {
-			fail_text = "action_astral_splitting_no_rift_spawning_location"
-			if = {
-				limit = {
-					is_nomadic = no
-				}
-				any_system_within_border = {
-					can_spawn_astral_rift = yes
-				}
-			}
-			else = {
-				any_owned_nonprimary_starbase = {
-					is_waystation_starbase = yes
-					solar_system? = {
-						can_spawn_astral_rift = yes
-					}
-				}
-			}
-		}
+		always = no
 	}
 
 	effect = {
@@ -351,24 +330,6 @@ action_astral_splitting = {
 
 	ai_weight = {
 		weight = 0
-		modifier = {
-			add = 200
-			count_owned_leader = {
-				count >= 2
-				limit = {
-					leader_class = scientist
-				}
-			}
-		}
-		modifier = {
-			add = 100
-			count_owned_leader = {
-				count > 2
-				limit = {
-					leader_class = scientist
-				}
-			}
-		}
 	}
 }
 
@@ -385,6 +346,18 @@ action_gain_physics_insight = {
 	cooldown = @ASTRAL_ACTION_5_YEARS_COOLDOWN
 	picture = GFX_astral_action_gain_physics_insight
 
+	allow_unlock = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
 	effect = {
 		add_modifier = {
 			modifier = gain_physics_insight_modifier
@@ -399,7 +372,7 @@ action_gain_physics_insight = {
 	}
 
 	ai_weight = {
-		weight = 100
+		weight = 0
 	}
 }
 
@@ -416,20 +389,16 @@ action_hyper_relay_insight = {
 
 	picture = GFX_astral_action_hyper_relay_insight
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		has_overlord_dlc = yes
-		NOR = {
-			has_technology = tech_hyper_relays
-			has_tech_option = tech_hyper_relays
-		}
+		always = no
 	}
 
 	allow = {
-		has_technology = tech_hyper_drive_2
-	}
-
-	is_exhausted = {
-		has_tech_option = tech_hyper_relays
+		always = no
 	}
 
 	effect = {
@@ -440,7 +409,7 @@ action_hyper_relay_insight = {
 	}
 
 	ai_weight = {
-		weight = 1000
+		weight = 0
 	}
 }
 
@@ -462,11 +431,16 @@ action_flash_forge_hyper_relay = {
 	uses_custom_cooldown = yes
 	picture = GFX_astral_action_flash_forge_hyper_relay
 
+	allow_unlock = {
+		always = no
+	}
+
 	potential = {
-		OR = {
-			has_technology = tech_hyper_relays
-			has_tech_option = tech_hyper_relays
-		}
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -480,44 +454,8 @@ action_flash_forge_hyper_relay = {
 		}
 	}
 
-	allow = {
-		has_technology = tech_hyper_relays
-		custom_tooltip = {
-			fail_text = "action_flash_forge_hyper_relay_available_tooltip"
-			NOT = { has_country_flag = flash_forge_hyper_relay_activated }
-		}
-		custom_tooltip = {
-			fail_text = "action_flash_forge_hyper_relay_executing_tooltip"
-			NOT = {
-				any_owned_fleet = {
-					is_ship_class = shipclass_constructor
-					has_fleet_flag = flash_forging_hyper_relay
-				}
-			}
-		}
-	}
-
 	ai_weight = {
 		weight = 0
-		modifier = {
-			add = 200
-			if = {
-				limit = {
-					is_nomadic = no
-				}
-				any_system_within_border = {
-					has_any_hyper_relay = no
-				}
-			}
-			else = {
-				any_owned_nonprimary_starbase = {
-					has_starbase_size >= starbase_waystation_2
-					solar_system = {
-						has_any_hyper_relay = no
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -536,11 +474,15 @@ action_lateral_artifacting = {
 	picture = GFX_astral_action_lateral_artifacting
 
 	allow_unlock = {
-		num_owned_relics >= 2
+		always = no
+	}
+
+	potential = {
+		always = no
 	}
 
 	allow = {
-		has_modifier = relic_activation_cooldown
+		always = no
 	}
 
 	effect = {
@@ -564,14 +506,7 @@ action_lateral_artifacting = {
 	}
 
 	ai_weight = {
-		weight = 500
-		modifier = {
-			factor = 0
-			has_resource = {
-				type = unity
-				amount < 10000
-			}
-		}
+		weight = 0
 	}
 }
 
@@ -590,7 +525,15 @@ action_dimensional_lock = {
 	picture = GFX_astral_action_dimensional_lock
 
 	allow_unlock = {
-		has_technology = tech_wormhole_stabilization
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -599,33 +542,7 @@ action_dimensional_lock = {
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 10
-			is_militarist = yes
-		}
-		modifier = {
-			factor = 100
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				NOT = {
-					any_system_within_border = {
-						has_natural_wormhole = yes
-					}
-				}
-				NOT = {
-					any_owned_nonprimary_starbase = {
-						is_waystation_starbase = yes
-						solar_system? = {
-							has_natural_wormhole = yes
-						}
-					}
-				}
-			}
-		}
+		weight = 0
 	}
 }
 
@@ -644,11 +561,15 @@ action_folding_hyperspace = {
 	picture = GFX_astral_action_folding_hyperspace
 
 	allow_unlock = {
-		OR = {
-			has_technology = tech_jump_drive_1
-			has_technology = tech_psi_jump_drive_1
-			has_technology = tech_subspace_drive
-		}
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
 	}
 
 	effect = {
@@ -663,15 +584,7 @@ action_folding_hyperspace = {
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 10
-			is_militarist = yes
-		}
-		modifier = {
-			factor = 100
-			is_at_war = yes
-		}
+		weight = 0
 	}
 }
 
@@ -689,21 +602,25 @@ action_dimensional_shifting = {
 
 	picture = GFX_astral_action_dimensional_shifting
 
+	allow_unlock = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
 	effect = {
 		custom_tooltip = "action_dimensional_shifting_tooltip"
 		set_country_flag = unlock_phase_fleet
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 10
-			is_militarist = yes
-		}
-		modifier = {
-			factor = 100
-			is_at_war = yes
-		}
+		weight = 0
 	}
 }
 
@@ -736,6 +653,18 @@ action_astral_siphon = {
 	cooldown = @ASTRAL_ACTION_10_YEARS_COOLDOWN
 	picture = GFX_astral_action_astral_siphon
 
+	allow_unlock = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -767,7 +696,7 @@ action_astral_siphon = {
 	}
 
 	ai_weight = {
-		weight = 200
+		weight = 0
 	}
 }
 
@@ -784,16 +713,24 @@ action_planar_mastery = {
 
 	picture = GFX_astral_action_planar_mastery
 
+	allow_unlock = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
 	effect = {
 		custom_tooltip = "action_planar_mastery_tooltip"
 		set_country_flag = action_planar_mastery_activated
 	}
 
 	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 100
-			end_game_years_passed > 0
-		}
+		weight = 0
 	}
 }
