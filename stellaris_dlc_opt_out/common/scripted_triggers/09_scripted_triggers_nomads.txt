@@ -944,40 +944,11 @@ nomad_can_settle_trigger = {
 }
 
 can_embark_trigger = {
-	has_nomads_dlc = yes
-	is_nomadic = no
-	OR = {
-		has_tradition = tr_adaptability_finish
-		has_tradition = tr_versatility_finish
-		has_country_flag = doomsday_embark_unlocked
-	}
-	can_embark_no_tradition_check_trigger = yes
+	always = no
 }
 
 can_embark_no_tradition_check_trigger = {
-	has_nomads_dlc = yes
-	is_nomadic = no
-	is_wilderness_empire = no
-	is_homicidal = no
-	NOR = {
-		has_ascension_perk = ap_cosmogenesis
-		has_origin = origin_legendary_leader
-		has_origin = origin_legendary_leader_death
-		has_origin = origin_legendary_leader_imperial
-		has_origin = origin_legendary_leader_dictatorial
-		has_origin = origin_endbringers
-		has_origin = origin_shroud_forged
-		has_origin = origin_fear_of_the_dark
-		has_origin = origin_toxic_knights
-		has_origin = origin_tree_of_life
-		has_origin = origin_fruitful
-		any_situation = {
-			OR = {
-				is_situation_type = situation_red_giant_expansion #After these situation ends it's fine to embark
-				is_situation_type = situation_cosmic_dawn
-			}
-		}
-	}
+	always = no
 }
 
 # Used in Colony Designations, FROM - country scope, this/root - planet scope
