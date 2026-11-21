@@ -20,30 +20,6 @@ add_resource_astral_threads = {
 }
 
 spawn_astral_scar = {
-	spawn_planet = {
-		class = pc_astral_scar
-		spawn_beyond_gravity_well = yes
-		orbit_angle_offset = 360
-		size = 20
-		init_effect = {
-			set_name = "NAME_Astral_Scar"
-			add_deposit = d_astral_threads_deposit_1
-			prevent_anomaly = yes
-			set_planet_flag = suppress_archaeological_sites
-			# Notify the discovering empire. Regular empires pass RECIPIENT = solar_system.owner;
-			# Nomads (who never own the system their waystation occupies) pass the discovering
-			# country directly. Galaxy gen seeding passes no RECIPIENT, so no message is sent.
-			[[RECIPIENT]
-			create_message = {
-				type = MESSAGE_ASTRAL_SCAR_DISCOVERED
-				localization = MESSAGE_ASTRAL_SCAR_DISCOVERED_DESC
-				days = 30
-				target = this
-				recipient = $RECIPIENT$
-			}
-			]
-		}
-	}
 }
 
 split_astral_scar = {
