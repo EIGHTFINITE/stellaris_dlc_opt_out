@@ -2914,10 +2914,6 @@ r_weather_manipulator = {
 
 	resources = {
 		category = relics
-		# Activation cost
-		cost = {
-			unity = 3000
-		}
 	}
 
 	triggered_country_modifier = {
@@ -2930,39 +2926,13 @@ r_weather_manipulator = {
 	score = 1000
 
 	active_effect = {
-		custom_tooltip = storm_relic_repelling_field_modifier_tt
-		capital_scope = {
-			hidden_effect = {
-				add_modifier = {
-					modifier = storm_relic_repelling_field_modifier
-					months = 36
-				}
-			}
-			create_cosmic_storm_influence_field = {
-				center = this.solar_system
-				radius = {
-					base = 300
-					modifier = {
-						mult = value:storm_size_multiplier
-					}
-				}
-				is_timed_influence_field = yes
-			}
-		}
-
-		custom_tooltip = relic_triumph_cooldown
-		hidden_effect = {
-			add_modifier = {
-				modifier = "relic_activation_cooldown"
-				days = @triumph_duration
-			}
-		}
+		custom_tooltip = LABEL_NA
 	}
 
 	possible = {
-		inline_script = {
-			script = relics/activation_checks
-			RELIC = r_weather_manipulator
+		custom_tooltip = {
+			fail_text = "relic_cant_activate"
+			always = no
 		}
 	}
 
