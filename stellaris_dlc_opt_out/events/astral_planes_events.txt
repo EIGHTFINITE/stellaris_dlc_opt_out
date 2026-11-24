@@ -14,38 +14,6 @@ event = {
 	trigger = {
 		has_astral_planes_dlc = yes
 	}
-
-	immediate = {
-		get_galaxy_setup_value = {
-			setting = num_stars
-			which = local_astral_rifts_num
-			scale_by = 0.1
-		}
-
-		while = {
-			count = local_astral_rifts_num
-
-			reroll_random = yes
-
-			random_system = {
-				limit = {
-					NOR = {
-						exists = owner
-						any_neighbor_system = {
-							exists = owner
-						}
-					}
-					can_spawn_astral_rift_natural_generation = yes
-				}
-
-				weights = {
-					inline_script = "astral_rift/spawn_weights"
-				}
-
-				spawn_astral_scar = yes
-			}
-		}
-	}
 }
 
 # Progressive Astral Rifts spawn
@@ -58,191 +26,6 @@ event = {
 	trigger = {
 		has_astral_planes_dlc = yes
 		mid_game_years_passed >= 0
-	}
-
-	immediate = {
-		every_playable_country = {
-			limit = {
-				NOT = { has_country_flag = astral_rift_spawn_moratorium }
-				is_astral_rift_pool_empty = no
-			}
-
-			if = {
-				limit = {
-					is_nomadic = no
-				}
-				export_trigger_value_to_variable = {
-					trigger = count_system_within_border
-					parameters = {
-						limit = {
-							can_spawn_astral_rift_or_split_astral_scar = yes
-						}
-					}
-					variable = progressive_rift_valid_systems
-				}
-			}
-			else = {
-				export_trigger_value_to_variable = {
-					trigger = count_owned_nonprimary_starbase
-					parameters = {
-						limit = {
-							is_waystation_starbase = yes
-							solar_system? = {
-								can_spawn_astral_rift_or_split_astral_scar = yes
-							}
-						}
-					}
-					variable = progressive_rift_valid_systems
-				}
-			}
-
-			if = {
-				limit = {
-					check_variable = {
-						which = progressive_rift_valid_systems
-						value > 0
-					}
-				}
-
-				change_variable = {
-					which = years_passed_since_last_rift_spawn
-					value = 1
-				}
-
-				set_variable_to_random_value = {
-					which = astral_rift_spawn_roll
-					min = 0
-					max = 100
-				}
-
-				if = {
-					limit = {
-						astral_rifts_completed >= @progressive_rift_additional_difficulty_threshold
-					}
-					change_variable = {
-						which = astral_rift_spawn_roll
-						value = @progressive_rift_additional_difficulty_past_threshold
-					}
-				}
-			}
-			else = {
-				clear_variable = progressive_rift_valid_systems
-			}
-		}
-
-		every_playable_country = {
-			limit = {
-				is_variable_set = progressive_rift_valid_systems
-			}
-
-			if = {
-				limit = {
-					check_variable_arithmetic  = {
-						which = years_passed_since_last_rift_spawn
-						multiply = @progressive_rift_spawn_chance_per_year
-						multiply = value:progressive_rifts_additional_weight
-						multiply = @progressive_rift_system_count_weight_inverted
-						add = progressive_rift_valid_systems
-						divide = @progressive_rift_system_count_weight_inverted
-						value > astral_rift_spawn_roll
-					}
-				}
-
-				if = {
-					limit = {
-						is_nomadic = no
-					}
-					random_planet_within_border = {
-						limit = {
-							is_astral_scar = yes
-							has_anomaly = no
-						}
-
-						log = "Splitting Astral Scar to an Astral Rift in system [This.System.GetName] for country [Prev.GetName]."
-						split_astral_scar = yes
-						prev = {
-							set_timed_country_flag = {
-								flag = astral_rift_spawn_moratorium
-								years = @astral_rift_spawn_moratorium_years
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							NOT = { has_country_flag = astral_rift_spawn_moratorium }
-						}
-						random_system_within_border = {
-							limit = {
-								can_spawn_astral_rift_natural_generation = yes
-							}
-							log = "Spawning Astral Scar in system [This.GetName] for country [Prev.GetName]."
-							spawn_astral_scar = { RECIPIENT = solar_system.owner }
-						}
-						set_timed_country_flag = {
-							flag = astral_rift_spawn_moratorium
-							years = @astral_rift_spawn_moratorium_years
-						}
-					}
-				}
-				else = {
-					save_event_target_as = astral_country
-					random_owned_nonprimary_starbase = {
-						limit = {
-							is_waystation_starbase = yes
-							solar_system? = {
-								any_system_planet = {
-									is_astral_scar = yes
-									has_anomaly = no
-								}
-							}
-						}
-						solar_system = {
-							random_system_planet = {
-								limit = {
-									is_astral_scar = yes
-									has_anomaly = no
-								}
-
-								log = "Splitting Astral Scar to an Astral Rift in system [This.System.GetName] for country [event_target:astral_country.GetName]."
-								split_astral_scar = yes
-								event_target:astral_country = {
-									set_timed_country_flag = {
-										flag = astral_rift_spawn_moratorium
-										years = @astral_rift_spawn_moratorium_years
-									}
-								}
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							NOT = { has_country_flag = astral_rift_spawn_moratorium }
-						}
-						random_owned_nonprimary_starbase = {
-							limit = {
-								is_waystation_starbase = yes
-								solar_system? = {
-									can_spawn_astral_rift_natural_generation = yes
-								}
-							}
-							solar_system = {
-								log = "Spawning Astral Scar in system [This.GetName] for country [event_target:astral_country.GetName]."
-								spawn_astral_scar = { RECIPIENT = event_target:astral_country }
-							}
-						}
-						set_timed_country_flag = {
-							flag = astral_rift_spawn_moratorium
-							years = @astral_rift_spawn_moratorium_years
-						}
-					}
-				}
-				clear_variable = years_passed_since_last_rift_spawn
-			}
-			clear_variable = progressive_rift_valid_systems
-			clear_variable = astral_rift_spawn_roll
-		}
 	}
 }
 
@@ -4259,10 +4042,18 @@ ship_event = {
 		}
 		from = {
 			solar_system = {
-				spawn_astral_rift = {
-					id = interdimensional_circus
-					in_place_of = prev
-					spawn_sound = no
+				spawn_planet = {
+					class = pc_astral_scar
+					location = prev
+					spawn_beyond_gravity_well = yes
+					orbit_angle_offset = 360
+					size = 20
+					init_effect = {
+						set_name = "NAME_Astral_Scar"
+						add_deposit = d_astral_threads_deposit_1
+						prevent_anomaly = yes
+						set_planet_flag = suppress_archaeological_sites
+					}
 				}
 			}
 		}
@@ -4397,9 +4188,17 @@ ship_event = {
 		name = FASCINATING
 		from = {
 			solar_system = {
-				spawn_astral_rift = {
-					random_pos = yes
-					orbit_angle = 360
+				spawn_planet = {
+					class = pc_astral_scar
+					spawn_beyond_gravity_well = yes
+					orbit_angle_offset = 360
+					size = 20
+					init_effect = {
+						set_name = "NAME_Astral_Scar"
+						add_deposit = d_astral_threads_deposit_1
+						prevent_anomaly = yes
+						set_planet_flag = suppress_archaeological_sites
+					}
 				}
 			}
 		}
@@ -4435,7 +4234,18 @@ ship_event = {
 		from = {
 			remove_deposit = d_astral_threads_deposit_3
 			solar_system = {
-				spawn_astral_scar = { RECIPIENT = solar_system.owner }
+				spawn_planet = {
+					class = pc_astral_scar
+					spawn_beyond_gravity_well = yes
+					orbit_angle_offset = 360
+					size = 20
+					init_effect = {
+						set_name = "NAME_Astral_Scar"
+						add_deposit = d_astral_threads_deposit_1
+						prevent_anomaly = yes
+						set_planet_flag = suppress_archaeological_sites
+					}
+				}
 			}
 		}
 	}
@@ -5071,8 +4881,18 @@ ship_event = {
 		}
 		from = {
 			solar_system = {
-				spawn_astral_rift = {
-					in_place_of = prev
+				spawn_planet = {
+					class = pc_astral_scar
+					location = prev
+					spawn_beyond_gravity_well = yes
+					orbit_angle_offset = 360
+					size = 20
+					init_effect = {
+						set_name = "NAME_Astral_Scar"
+						add_deposit = d_astral_threads_deposit_1
+						prevent_anomaly = yes
+						set_planet_flag = suppress_archaeological_sites
+					}
 				}
 			}
 		}
@@ -5163,8 +4983,18 @@ ship_event = {
 		}
 		from = {
 			solar_system = {
-				spawn_astral_rift = {
-					in_place_of = prev
+				spawn_planet = {
+					class = pc_astral_scar
+					location = prev
+					spawn_beyond_gravity_well = yes
+					orbit_angle_offset = 360
+					size = 20
+					init_effect = {
+						set_name = "NAME_Astral_Scar"
+						add_deposit = d_astral_threads_deposit_1
+						prevent_anomaly = yes
+						set_planet_flag = suppress_archaeological_sites
+					}
 				}
 			}
 		}

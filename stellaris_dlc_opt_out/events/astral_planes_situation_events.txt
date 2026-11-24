@@ -61,11 +61,17 @@ situation_event = {
 	option = {
 		name = EXCELLENT
 		event_target:crystal_sphere_system = {
-			spawn_astral_rift = {
-				random_pos = yes
-				orbit_angle = 360
-				id = crystal
-				graphics_entity_name = crystal_rift_entity
+			spawn_planet = {
+				class = pc_astral_scar
+				spawn_beyond_gravity_well = yes
+				orbit_angle_offset = 360
+				size = 20
+				init_effect = {
+					set_name = "NAME_Astral_Scar"
+					add_deposit = d_astral_threads_deposit_1
+					prevent_anomaly = yes
+					set_planet_flag = suppress_archaeological_sites
+				}
 			}
 		}
 	}

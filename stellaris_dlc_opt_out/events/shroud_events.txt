@@ -14762,67 +14762,6 @@ country_event = {
 			country_event = { id = enclave.405 }
 		}
 	}
-	# Open Rift
-	option = {
-		name = shroud.5355.b
-		trigger = {
-			is_nomadic = no
-		}
-		allow = {
-			resource_stockpile_compare = {
-				resource = astral_threads
-				value >= 500
-			}
-			resource_stockpile_compare = {
-				resource = influence
-				value >= 50
-			}
-			custom_tooltip = {
-				fail_text = "action_astral_splitting_no_rift_spawning_location_tt"
-				any_system_within_border = {
-					can_spawn_astral_rift = yes
-				}
-			}
-		}
-		shroud_touched_option_cost = {
-			RESOURCE = astral_threads
-			VALUE = 500
-		}
-		astral_splitting = yes
-		set_country_flag = psionic_rift_help_received
-		try_give_open_stars_first_contact_bonus_shroudwalkers = yes
-	}
-	option = {
-		name = shroud.5355.b
-		trigger = {
-			is_nomadic = yes
-		}
-		allow = {
-			resource_stockpile_compare = {
-				resource = astral_threads
-				value >= 500
-			}
-			resource_stockpile_compare = {
-				resource = influence
-				value >= 50
-			}
-			custom_tooltip = {
-				fail_text = "action_astral_splitting_no_rift_spawning_location_tt"
-				any_owned_nonprimary_starbase = {
-					is_waystation_starbase = yes
-					solar_system? = {
-						can_spawn_astral_rift = yes
-					}
-				}
-			}
-		}
-		shroud_touched_option_cost = {
-			RESOURCE = astral_threads
-			VALUE = 500
-		}
-		astral_splitting_nomad = yes
-		set_country_flag = psionic_rift_help_received
-	}
 	# Quit
 	option = {
 		name = GOODBYE
