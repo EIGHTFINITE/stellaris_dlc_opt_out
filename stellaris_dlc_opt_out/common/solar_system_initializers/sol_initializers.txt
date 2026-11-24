@@ -29,16 +29,6 @@ sol_system_initializer = {
 			}
 		}
 		generate_home_system_resources = yes
-		# Determine whether GRS spawns instead of CoM as UNE's lost colony (20% chance).
-		if = {
-			limit = {
-				has_nomads_dlc = yes
-			}
-			random = {
-				chance = 20
-				set_global_flag = human_lost_colony_is_grs
-			}
-		}
 	}
 
 	planet = {
@@ -2737,16 +2727,6 @@ toxic_knights_sol_start = {
 			add_deposit = d_minerals_6
 			add_deposit = d_alloys_3
 		}
-		# Determine whether GRS spawns instead of CoM as UNE's lost colony (20% chance).
-		if = {
-			limit = {
-				has_nomads_dlc = yes
-			}
-			random = {
-				chance = 20
-				set_global_flag = human_lost_colony_is_grs
-			}
-		}
 	}
 
 	planet = {
@@ -3084,16 +3064,6 @@ sol_system_fear_of_the_dark_system = {
 			}
 		}
 		generate_home_system_resources = yes
-		# Determine whether GRS spawns instead of CoM as UNE's lost colony (20% chance).
-		if = {
-			limit = {
-				has_nomads_dlc = yes
-			}
-			random = {
-				chance = 20
-				set_global_flag = human_lost_colony_is_grs
-			}
-		}
 	}
 
 	planet = {
@@ -4110,16 +4080,6 @@ mindwarden_sol_system_init = {
 			}
 		}
 		generate_home_system_resources = yes
-		# Determine whether GRS spawns instead of CoM as UNE's lost colony (20% chance).
-		if = {
-			limit = {
-				has_nomads_dlc = yes
-			}
-			random = {
-				chance = 20
-				set_global_flag = human_lost_colony_is_grs
-			}
-		}
 	}
 
 	planet = {
