@@ -7,40 +7,16 @@
 ################
 
 can_spawn_astral_rift = {
-	NOR = {
-		has_astral_rift = yes
-		any_system_planet = {
-			is_astral_scar = yes
-		}
-		any_neighbor_system = {
-			OR = {
-				has_astral_rift = yes
-				any_system_planet = {
-					is_astral_scar = yes
-				}
-			}
-		}
-	}
+	always = no
 }
 
 can_spawn_astral_rift_natural_generation = {
-	NOR = {
-		starting_system = yes
-		is_fe_cluster = yes
-		has_special_star_flag_trigger = yes
-	}
-	can_spawn_astral_rift = yes
+	always = no
 }
 
 # Used for progressive Rifts
 can_spawn_astral_rift_or_split_astral_scar = {
-	OR = {
-		any_system_planet = {
-			is_astral_scar = yes
-			has_anomaly = no
-		}
-		can_spawn_astral_rift_natural_generation = yes
-	}
+	always = no
 }
 
 # THIS = Leader scope
