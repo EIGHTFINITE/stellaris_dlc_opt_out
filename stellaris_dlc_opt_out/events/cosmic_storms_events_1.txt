@@ -579,81 +579,6 @@ country_event = {
 
 	hide_window = yes
 	is_triggered_only = yes
-
-	immediate = {
-		# Early game
-		if = {
-			limit = {
-				mid_game_years_passed < 1
-				end_game_years_passed < 1
-			}
-
-			try_spawn_natural_storm = {
-				MAX_STORM_COUNT = value:storm_early_game_spawn_max_cap_scaled
-				SPAWN_CHANCE = value:storm_early_game_spawn_chance_scaled
-				COOLDOWN = value:storm_early_game_cooldown_in_days_scaled
-				COOLDOWN_VARIANCE = value:storm_early_game_cooldown_variance_scaled
-			}
-		}
-		# Mid Game
-		else_if = {
-			limit = {
-				mid_game_years_passed > 0
-				end_game_years_passed < 1
-			}
-
-			try_spawn_natural_storm = {
-				MAX_STORM_COUNT = value:storm_mid_game_spawn_max_cap_scaled
-				SPAWN_CHANCE = value:storm_mid_game_spawn_chance_scaled
-				COOLDOWN = value:storm_mid_game_cooldown_in_days_scaled
-				COOLDOWN_VARIANCE = value:storm_mid_game_cooldown_variance_scaled
-			}
-		}
-
-		# Late Game
-		else_if = {
-			limit = {
-				end_game_years_passed > 0
-			}
-
-			# Will set 'nexus_storm_spawned' flag if successful.
-			try_spawn_natural_nexus_storm = {
-				MAX_STORM_COUNT = value:storm_late_game_spawn_max_cap_scaled
-				SPAWN_CHANCE = value:nexus_storm_spawn_chance_scaled
-				COOLDOWN = value:nexus_storm_cooldown_in_days_scaled
-			}
-
-			# If we didn't spawn a nexus storm, try to spawn a different type.
-			if = {
-				limit = { NOT = { has_country_flag =  nexus_storm_spawned }  }
-
-				try_spawn_natural_storm = {
-					MAX_STORM_COUNT = value:storm_late_game_spawn_max_cap_scaled
-					SPAWN_CHANCE = value:storm_late_game_spawn_chance_scaled
-					COOLDOWN = value:storm_late_game_cooldown_in_days_scaled
-					COOLDOWN_VARIANCE = value:storm_late_game_cooldown_variance_scaled
-				}
-			}
-			else = {
-				# Clear flag, only needed for this event.
-				remove_country_flag = nexus_storm_spawned
-
-				country_event = {
-					id = cstorms.905
-					days = value:storm_late_game_cooldown_in_days_scaled
-					random = value:storm_late_game_cooldown_variance_scaled
-				}
-				every_playable_country = {
-					limit = {
-						event_target:new_storm_location = {
-							is_surveyed = { who = prev status = yes }
-						}
-					}
-					country_event = { id = timeline.77 } # Timeline Nexus Storm
-				}
-			}
-		}
-	}
 }
 
 # Triggers after nexus storm cooldown is finished, removes flag.
@@ -2498,14 +2423,6 @@ system_event = {
 			has_star_flag = storm_system
 		}
 	}
-
-	immediate = {
-		create_cosmic_storm = {
-			type = celestial_storm
-			immediate = yes
-			cosmic_storm_start_position = this
-		}
-	}
 }
 
 # Folly
@@ -4116,12 +4033,11 @@ ship_event = {
 				min = @tier1researchmin
 				max = @tier1researchmax
 			}
-		}
-		solar_system.star = {
-			enable_special_project = {
-				name = "STORM_IN_A_BOX_TRAP_PROJECT"
-				location = this
-				owner = root.controller
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
 			}
 		}
 	}
@@ -4155,57 +4071,6 @@ ship_event = {
 	id = cstorms.1825
 	hide_window = yes
 	is_triggered_only = yes
-
-	immediate = {
-		random_list = {
-			1 = {
-				spawn_random_storm = {
-					type = gravity_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-			1 = {
-				spawn_random_storm = {
-					type = celestial_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-			1 = {
-				spawn_random_storm = {
-					type = electric_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-			1 = {
-				spawn_random_storm = {
-					type = particle_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-			1 = {
-				spawn_random_storm = {
-					type = solar_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-			1 = {
-				spawn_random_storm = {
-					type = magnetic_storm
-					immediate = yes
-					cosmic_storm_start_position = this.solar_system
-				}
-			}
-		}
-		ship_event = {
-			id = cstorms.1826
-			scopes = { from = last_created_cosmic_storm }
-		}
-	}
 }
 
 # FROM = released storm
