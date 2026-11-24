@@ -12838,11 +12838,7 @@ resolution_tiyanki_conservation_act = {
 	}
 
 	potential = {
-		has_federations_dlc = yes
-		NOT = {
-			is_active_resolution = "resolution_tiyanki_pest_control"
-			has_global_flag = tiyanki_extinct
-		}
+		always = no
 	}
 
 	allow = {
@@ -12949,7 +12945,7 @@ resolution_repeal_tiyanki_conservation_act = {
 	}
 
 	potential = {
-		is_active_resolution = "resolution_tiyanki_conservation_act"
+		always = no
 	}
 
 	ai_weight = {
@@ -13047,11 +13043,7 @@ resolution_tiyanki_pest_control = {
 	}
 
 	potential = {
-		has_federations_dlc = yes
-		NOT = {
-			is_active_resolution = "resolution_tiyanki_conservation_act"
-			has_global_flag = tiyanki_extinct
-		}
+		always = no
 	}
 
 	allow = {
@@ -13156,7 +13148,7 @@ resolution_repeal_tiyanki_pest_control = {
 	}
 
 	potential = {
-		is_active_resolution = "resolution_tiyanki_pest_control"
+		always = no
 	}
 
 	ai_weight = {
@@ -13219,8 +13211,7 @@ resolution_amoeba_conservation_act = {
 	icon = "GFX_resolution_tiyanki_preservation"
 
 	potential = {
-		has_federations_dlc = yes
-		has_modifier = pacified_amoebas
+		always = no
 	}
 
 	resources = {
@@ -13358,7 +13349,7 @@ resolution_repeal_amoeba_conservation_act = {
 	}
 
 	potential = {
-		is_active_resolution = "resolution_amoeba_conservation_act"
+		always = no
 	}
 
 	ai_weight = {
