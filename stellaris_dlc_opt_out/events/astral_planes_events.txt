@@ -4256,15 +4256,7 @@ ship_event = {
 		name = astral_planes.6011.a
 		owner = {
 			astral_thread_small_reward = yes
-		}
-		from = {
-			solar_system = {
-				spawn_astral_rift = {
-					id = interdimensional_circus
-					in_place_of = prev
-					spawn_sound = no
-				}
-			}
+			astral_thread_large_reward = yes
 		}
 		hidden_effect = {
 			from = { remove_planet = yes }
@@ -4395,13 +4387,8 @@ ship_event = {
 
 	option = {
 		name = FASCINATING
-		from = {
-			solar_system = {
-				spawn_astral_rift = {
-					random_pos = yes
-					orbit_angle = 360
-				}
-			}
+		owner = {
+			astral_thread_large_reward = yes
 		}
 	}
 }
@@ -5069,19 +5056,13 @@ ship_event = {
 				}
 			}
 		}
-		from = {
-			solar_system = {
-				spawn_astral_rift = {
-					in_place_of = prev
-				}
-			}
-		}
 		hidden_effect = {
 			from = {
 				remove_planet = yes
 			}
 		}
 		owner = {
+			astral_thread_large_reward = yes
 			add_monthly_resource_mult = {
 				resource = minerals
 				value = @tier3materialreward
@@ -5161,18 +5142,14 @@ ship_event = {
 				}
 			}
 		}
-		from = {
-			solar_system = {
-				spawn_astral_rift = {
-					in_place_of = prev
-				}
-			}
-		}
 		destroy_ship = this
 		hidden_effect = {
 			from = {
 				remove_planet = yes
 			}
+		}
+		owner = {
+			astral_thread_large_reward = yes
 		}
 	}
 }
