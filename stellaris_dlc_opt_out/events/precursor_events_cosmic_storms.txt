@@ -1088,31 +1088,6 @@ country_event = {
 			min = @tier1researchmin
 			max = @tier1researchmax
 		}
-
-		capital_scope = {
-			add_modifier = {
-				modifier = storm_relic_repelling_field_modifier
-				months = 12
-
-			}
-
-			create_cosmic_storm_influence_field = {
-				center = this.solar_system
-				radius = {
-					base = 150
-					modifier = {
-						mult = value:storm_size_multiplier
-					}
-				}
-				is_timed_influence_field = yes
-			}
-		}
-
-		spawn_random_storm = {
-			type = celestial_storm
-			immediate = yes
-			cosmic_storm_start_position = from.solar_system
-		}
 	}
 
 	option = {
@@ -2541,17 +2516,6 @@ country_event = {
 		}
 
 		event_target:system_windswept_fates = {
-			# Spawn the storm.
-			spawn_random_storm = {
-				cosmic_storm_start_position = this
-				immediate = yes
-			}
-
-			last_created_cosmic_storm = {
-				set_storm_flag = storm_windswept_fates
-				save_event_target_as = storm_windswept_fates
-			}
-
 			# We ensured in the previous event that this system has a matching planet.
 			random_system_planet = {
 				limit = {
@@ -3400,13 +3364,6 @@ fleet_event = { # Stage 5: Landeer's Legacy
 	after = {
 		from = {
 			set_site_progress_locked = no
-			solar_system = {
-				spawn_random_storm = {
-					type = "gravity_storm"
-					cosmic_storm_start_position = this
-					immediate = yes
-				}
-			}
 		}
 
 		hidden_effect = {

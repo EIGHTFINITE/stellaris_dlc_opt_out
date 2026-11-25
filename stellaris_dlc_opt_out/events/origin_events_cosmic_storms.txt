@@ -38,9 +38,6 @@ country_event = { #
 					set_ambient_object_flag = stormfall_planet_nascent
 				}
 			}
-			owner.capital_scope = {
-				create_influence_field_if_needed = yes
-			}
 		}
 		else = {
 			owner.capital_scope = {
@@ -53,19 +50,10 @@ country_event = { #
 				last_created_ambient_object = {
 					set_ambient_object_flag = stormfall_planet_nascent
 				}
-				add_modifier = {
-					modifier = cs_storm_chasers_homeworld_storm_attraction
-				}
-				create_influence_field_if_needed = yes
 			}
 			owner.capital_scope.solar_system = {
 				set_star_flag = stormfall_anchor@root.owner
 			}
-		}
-
-		start_situation = {
-			type = situation_stormfall
-			target = root
 		}
 	}
 }
@@ -920,40 +908,6 @@ situation_event = { # Stage 3 End
 				destroy_ambient_object = this
 			}
 		}
-
-		switch = {
-			trigger = has_situation_flag
-			electric_system_storm = {
-				owner = {
-					spawn_random_storm = {
-						type = electric_storm
-						cosmic_storm_start_position = event_target:stormfall_storm_system
-						immediate = yes
-					}
-				}
-			}
-			magnetic_system_storm = {
-				owner = {
-					spawn_random_storm = {
-						type = magnetic_storm
-						cosmic_storm_start_position = event_target:stormfall_storm_system
-						immediate = yes
-					}
-				}
-			}
-			gravity_system_storm = {
-				owner = {
-					spawn_random_storm = {
-						type = gravity_storm
-						cosmic_storm_start_position = event_target:stormfall_storm_system
-						immediate = yes
-					}
-				}
-			}
-		}
-		last_created_cosmic_storm = {
-			set_storm_flag = storm_stormfall
-		}
 	}
 
 	option = {
@@ -1478,29 +1432,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# The Big One spawns at the fixed anchor system for nomads (matching the storm
-		# visuals), not the arkship's current system, which moves and is null mid-jump.
-		if = {
-			limit = { is_nomadic = yes }
-			event_target:stormfall_anchor_system@root.owner = { save_event_target_as = nexus_spawn_system }
-		}
-		else = {
-			capital_scope.solar_system = { save_event_target_as = nexus_spawn_system }
-		}
-		spawn_random_storm = {
-			type = "nexus_storm"
-			cosmic_storm_start_position = event_target:nexus_spawn_system
-			immediate = yes
-		}
 		every_ambient_object = {
 			limit = {
 				has_ambient_object_flag = nascent_nexus_storm
 			}
 			destroy_ambient_object = this
 		}
-
-		set_country_flag = is_nexus_spawner
-		set_country_flag = has_spawned_nexus_storm
 	}
 
 	option = {
