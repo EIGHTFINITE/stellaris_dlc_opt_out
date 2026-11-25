@@ -60,8 +60,13 @@ situation_event = {
 
 	option = {
 		name = EXCELLENT
-		owner = {
-			astral_thread_large_reward = yes
+		event_target:crystal_sphere_system = {
+			spawn_astral_rift = {
+				random_pos = yes
+				orbit_angle = 360
+				id = crystal
+				graphics_entity_name = crystal_rift_entity
+			}
 		}
 	}
 
