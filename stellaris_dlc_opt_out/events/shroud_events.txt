@@ -2866,6 +2866,11 @@ country_event = {
 	desc = {
 		trigger = {
 			text = shroud.720.desc
+			if = {
+				limit = { has_cosmic_storms_dlc = yes }
+				text = newline
+				text = shroud.720.desc_storm
+			}
 		}
 	}
 	picture = GFX_evt_superstition_bad_luck
@@ -2904,6 +2909,16 @@ country_event = {
 				}
 				destroy_ship = this
 			}
+			if = {
+				limit = {
+					has_cosmic_storms_dlc = yes
+				}
+				spawn_random_storm = {
+					type = celestial_storm
+					immediate = yes
+					cosmic_storm_start_position = this
+				}
+			}
 		}
 	}
 
@@ -2911,6 +2926,21 @@ country_event = {
 		name = HOW_UNFORTUNATE
 		trigger = { is_superstitious_beliefs_empire = yes }
 		custom_tooltip = shroud.720.tt
+		tooltip = {
+			if = {
+				limit = {
+					has_cosmic_storms_dlc = yes
+					exists = event_target:extreme_solar_flare_system
+				}
+				event_target:extreme_solar_flare_system = {
+					spawn_random_storm = {
+						type = celestial_storm
+						immediate = yes
+						cosmic_storm_start_position = this
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -319,41 +319,125 @@ situation_event = {
 # from = fleet
 situation_event = {
 	id = cstorms.2020
-	hide_window = yes
+	title = cstorms.2020.name
+	desc = cstorms.2020.desc
+	picture = GFX_evt_cosmic_storms_solar_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = solar_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
 
 # Spawn Electric Storm
 situation_event = {
 	id = cstorms.2025
-	hide_window = yes
+	title = cstorms.2025.name
+	desc = cstorms.2025.desc
+	picture = GFX_evt_cosmic_storms_electric_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = electric_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
 
 # Spawn Magnetic Storm
 situation_event = {
 	id = cstorms.2030
-	hide_window = yes
+	title = cstorms.2030.name
+	desc = cstorms.2030.desc
+	picture = GFX_evt_cosmic_storms_magnetic_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = magnetic_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
 
 # Spawn Particles Storm
 situation_event = {
 	id = cstorms.2035
-	hide_window = yes
+	title = cstorms.2035.name
+	desc = cstorms.2035.desc
+	picture = GFX_evt_cosmic_storms_particle_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = particle_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
 
 # Spawn Gravity Storm
 situation_event = {
 	id = cstorms.2040
-	hide_window = yes
+	title = cstorms.2040.name
+	desc = cstorms.2040.desc
+	picture = GFX_evt_cosmic_storms_gravity_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = gravity_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
 
 # Spawn Celestial Storm
 situation_event = {
 	id = cstorms.2045
-	hide_window = yes
+	title = cstorms.2045.name
+	desc = cstorms.2045.desc
+	picture = GFX_evt_cosmic_storms_celestial_storm
+	show_sound = event_energy_field
 	is_triggered_only = yes
+	location = target
+
+	option = {
+		name = cstorms.storm_gathered.a
+		spawn_random_storm = {
+			type = celestial_storm
+			immediate = yes
+			cosmic_storm_start_position = target.solar_system
+		}
+	}
+	after = { destroy_situation = this }
 }
