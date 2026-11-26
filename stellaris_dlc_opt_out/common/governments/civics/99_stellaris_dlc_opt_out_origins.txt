@@ -1,0 +1,175 @@
+# Nomad Origins
+
+# Voidfarers
+origin_default_nomads = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_default_nomads.dds"
+	picture = GFX_origin_nomad_default
+
+	non_colonizable_planet_class_neighbor = yes
+
+	flags = {
+		custom_start_screen
+	}
+
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = { has_nomads_dlc = yes }
+
+	possible = {
+		is_nomadic = yes
+	}
+
+	modifier = {
+		arkship_action_speed = 0.2
+		science_ship_survey_speed = 0.2
+		megastructure_waystation_megastructure_build_speed_mult = 0.2
+		category_voidcraft_draw_chance_mult = 0.2
+		category_voidcraft_research_speed_mult = 0.2
+		ship_repair_hull_mult = 0.5
+		ship_repair_armor_mult = 0.5
+	}
+
+	random_weight = {
+		base = 1
+	}
+	description = "origin_nomad_tooltip_default_effects"
+
+	advanced_start = yes
+}
+
+origin_sacred_path = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_sacred_path.dds"
+	picture = GFX_origin_sacred_path
+
+	non_colonizable_planet_class_neighbor = yes
+
+	flags = {
+		custom_start_screen
+	}
+
+	description = "origin_sacred_path_effects"
+
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = { always = no }
+
+	possible = {
+		is_nomadic = yes
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+				value = ethic_absolute_spiritualist
+			}
+		}
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+origin_heirs_of_the_khan = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_heirs_of_the_khan.dds"
+	picture = GFX_origin_heirs_of_the_khan
+
+	non_colonizable_planet_class_neighbor = yes
+
+	flags = {
+		custom_start_screen
+	}
+
+	description = "origin_heirs_of_the_khan_effects"
+
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = { always = no }
+
+	possible = {
+		is_nomadic = yes
+		authority = {
+			OR = {
+				value = auth_oligarchic
+				value = auth_dictatorial
+				value = auth_imperial
+			}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+				value = ethic_absolute_militarist
+			}
+		}
+	}
+
+	modifier = {
+		ship_windup_mult = -0.3
+		ship_base_speed_mult = 0.3
+	}
+
+	random_weight = {
+		base = 1
+	}
+}
+
+origin_forever_cruise = {
+	is_origin = yes
+	icon = gfx/interface/icons/origins/origins_forever_cruise.dds
+	picture = GFX_origin_forever_cruise
+
+	non_colonizable_planet_class_neighbor = yes
+
+	flags = {
+		custom_start_screen
+	}
+
+	description = "origin_forever_cruise_effects"
+
+	possible = {
+		is_nomadic = yes
+		ethics = {
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+				value = ethic_absolute_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_corporate_dominion
+				value = civic_private_prospectors
+				value = civic_hive_bodysnatcher
+				value = civic_machine_assimilator
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_hive_devouring_swarm
+				value = civic_fanatic_purifiers
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = { has_nomads_dlc = yes }
+
+	has_secondary_species = {	# see game_start.12
+		title = origin_forever_cruise_secondary_species
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}

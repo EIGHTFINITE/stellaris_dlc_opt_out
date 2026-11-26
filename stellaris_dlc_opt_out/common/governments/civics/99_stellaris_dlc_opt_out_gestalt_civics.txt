@@ -1,0 +1,84 @@
+####################################
+# Hive Mind - Nomads Civics
+####################################
+
+civic_hive_deep_sleep = {
+	playable = { has_nomads_dlc = yes }
+	ai_playable = { has_nomads_dlc = yes }
+	description = "civic_deep_sleep_effects"
+	potential = { authority = { value = auth_hive_mind } }
+	possible = {
+		is_nomadic = yes
+	}
+	modifier = {
+		leader_lifespan_mult = 0.1
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	custom_tooltip_with_modifiers = "civic_deep_sleep_effects_additional"
+}
+
+civic_hive_star_seekers = {
+	modification = yes
+	playable = { has_nomads_dlc = yes }
+	ai_playable = { has_nomads_dlc = yes }
+	potential = {
+		authority = { value = auth_hive_mind }
+		is_nomadic = yes
+	}
+	possible = {}
+	description = "civic_star_seekers_effect_tooltip"
+
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	ai_weight = {
+		base = @civic_rare_random_weight
+	}
+
+	modifier = {
+		ship_speed_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+}
+
+####################################
+# Machines - Nomads Civics
+####################################
+
+civic_machine_deep_sleep = {
+	playable = { has_nomads_dlc = yes }
+	ai_playable = { has_nomads_dlc = yes }
+	description = "civic_deep_sleep_effects"
+	potential = { authority = { value = auth_machine_intelligence } }
+	possible = {
+		is_nomadic = yes
+	}
+	modifier = {
+		leader_lifespan_mult = 0.1
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	custom_tooltip_with_modifiers = "civic_deep_sleep_effects_additional"
+}
+civic_machine_star_seekers = {
+	modification = yes
+	playable = { has_nomads_dlc = yes }
+	ai_playable = { has_nomads_dlc = yes }
+	potential = {
+		authority = { value = auth_machine_intelligence }
+		is_nomadic = yes
+	}
+	possible = {}
+	description = "civic_star_seekers_effect_tooltip"
+
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	ai_weight = {
+		base = @civic_rare_random_weight
+	}
+
+	modifier = {
+		ship_speed_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+}
