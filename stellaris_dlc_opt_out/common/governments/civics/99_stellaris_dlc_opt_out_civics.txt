@@ -15,7 +15,12 @@ civic_caravan_masters = {
 		authority = { NOT = { value = auth_corporate } }
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 
 	modifier = {
@@ -36,7 +41,12 @@ civic_deep_sleep = {
 		authority = { NOT = { value = auth_corporate } }
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		origin = {
 			NOT = { value = origin_synthetic_fertility }
 		}
@@ -59,7 +69,12 @@ civic_void_reavers = {
 		authority = { NOT = { value = auth_corporate } }
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		ethics = {
 			OR = {
 				text = civic_tooltip_militarist
@@ -125,7 +140,12 @@ civic_hired_guns = {
 		civics = { NOT = { value = civic_corporate_hired_guns } }
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		ethics = {
 			OR = {
 				text = civic_tooltip_militarist
@@ -155,7 +175,12 @@ civic_star_seekers = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness}}
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 	description = "civic_star_seekers_effect_tooltip"
 

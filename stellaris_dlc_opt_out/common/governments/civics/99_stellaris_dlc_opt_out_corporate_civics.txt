@@ -18,7 +18,12 @@ civic_caravan_masters_corporate = {
 		}
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 	modifier = {
 		country_starbase_capacity_add = 2
@@ -45,7 +50,12 @@ civic_corporate_deep_sleep = {
 		}
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		origin = {
 			NOT = { value = origin_synthetic_fertility }
 		}
@@ -68,7 +78,12 @@ civic_corporate_hired_guns = {
 		civics = { NOT = { value = civic_hired_guns } }
 	}
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		ethics = {
 			OR = {
 				text = civic_tooltip_militarist
@@ -115,9 +130,15 @@ civic_corporate_star_seekers = {
 			authority = { value = auth_corporate }
 			civics = { value = civic_galactic_sovereign_megacorp }
 		}
-		is_nomadic = yes
 	}
-	possible = {}
+	possible = {
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
+	}
 	description = "civic_star_seekers_effect_tooltip"
 
 	random_weight = {

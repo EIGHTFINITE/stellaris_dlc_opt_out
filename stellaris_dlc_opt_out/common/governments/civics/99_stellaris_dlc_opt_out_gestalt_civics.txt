@@ -8,7 +8,12 @@ civic_hive_deep_sleep = {
 	description = "civic_deep_sleep_effects"
 	potential = { authority = { value = auth_hive_mind } }
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 	modifier = {
 		leader_lifespan_mult = 0.1
@@ -23,9 +28,15 @@ civic_hive_star_seekers = {
 	ai_playable = { has_nomads_dlc = yes }
 	potential = {
 		authority = { value = auth_hive_mind }
-		is_nomadic = yes
 	}
-	possible = {}
+	possible = {
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
+	}
 	description = "civic_star_seekers_effect_tooltip"
 
 	random_weight = {
@@ -51,7 +62,12 @@ civic_machine_deep_sleep = {
 	description = "civic_deep_sleep_effects"
 	potential = { authority = { value = auth_machine_intelligence } }
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 	modifier = {
 		leader_lifespan_mult = 0.1
@@ -65,9 +81,15 @@ civic_machine_star_seekers = {
 	ai_playable = { has_nomads_dlc = yes }
 	potential = {
 		authority = { value = auth_machine_intelligence }
-		is_nomadic = yes
 	}
-	possible = {}
+	possible = {
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
+	}
 	description = "civic_star_seekers_effect_tooltip"
 
 	random_weight = {

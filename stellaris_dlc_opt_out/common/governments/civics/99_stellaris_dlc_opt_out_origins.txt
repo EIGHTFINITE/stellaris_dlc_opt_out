@@ -18,7 +18,12 @@ origin_default_nomads = {
 	ai_playable = { has_nomads_dlc = yes }
 
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 	}
 
 	modifier = {
@@ -58,7 +63,12 @@ origin_sacred_path = {
 	ai_playable = { always = no }
 
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		ethics = {
 			OR = {
 				text = civic_tooltip_spiritualist
@@ -91,7 +101,12 @@ origin_heirs_of_the_khan = {
 	ai_playable = { always = no }
 
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		authority = {
 			OR = {
 				value = auth_oligarchic
@@ -133,7 +148,12 @@ origin_forever_cruise = {
 	description = "origin_forever_cruise_effects"
 
 	possible = {
-		is_nomadic = yes
+		country_type = {
+			OR = {
+				text = IS_NOMADIC
+				value = does_not_exist
+			}
+		}
 		ethics = {
 			NOR = {
 				text = civic_tooltip_not_xenophobe
