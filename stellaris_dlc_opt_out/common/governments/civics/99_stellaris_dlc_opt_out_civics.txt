@@ -33,12 +33,24 @@ civic_caravan_masters = {
 }
 
 civic_deep_sleep = {
-	playable = { has_nomads_dlc = yes }
-	ai_playable = { has_nomads_dlc = yes }
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = {
+		has_nomads_dlc = yes
+	}
 	description = "civic_deep_sleep_effects"
 	potential = {
-		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-		authority = { NOT = { value = auth_corporate } }
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
 	}
 	possible = {
 		country_type = {
@@ -48,13 +60,27 @@ civic_deep_sleep = {
 			}
 		}
 		origin = {
-			NOT = { value = origin_synthetic_fertility }
+			NOT = {
+				value = origin_synthetic_fertility
+			}
 		}
 	}
-
-	modifier = {}
-
-	custom_tooltip_with_modifiers = "civic_deep_sleep_effects_additional"
+	modification = {
+		add = {
+			always = yes
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = civic_deep_sleep_not_moddable
+				NOT = {
+					any_owned_colony = {
+						has_deposit = d_deep_sleep_cryo_pods
+					}
+				}
+			}
+		}
+	}
+	alternate_civic_version = civic_corporate_deep_sleep
 }
 
 civic_void_reavers = {

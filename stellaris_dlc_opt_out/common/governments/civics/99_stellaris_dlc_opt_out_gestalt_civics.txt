@@ -3,10 +3,18 @@
 ####################################
 
 civic_hive_deep_sleep = {
-	playable = { has_nomads_dlc = yes }
-	ai_playable = { has_nomads_dlc = yes }
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = {
+		has_nomads_dlc = yes
+	}
 	description = "civic_deep_sleep_effects"
-	potential = { authority = { value = auth_hive_mind } }
+	potential = {
+		authority = {
+			value = auth_hive_mind
+		}
+	}
 	possible = {
 		country_type = {
 			OR = {
@@ -15,11 +23,25 @@ civic_hive_deep_sleep = {
 			}
 		}
 	}
+	modification = {
+		add = {
+			always = yes
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = civic_deep_sleep_not_moddable
+				NOT = {
+					any_owned_colony = {
+						has_deposit = d_deep_sleep_cryo_pods
+					}
+				}
+			}
+		}
+	}
 	modifier = {
 		leader_lifespan_mult = 0.1
 		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
 	}
-	custom_tooltip_with_modifiers = "civic_deep_sleep_effects_additional"
 }
 
 civic_hive_star_seekers = {
@@ -57,10 +79,18 @@ civic_hive_star_seekers = {
 ####################################
 
 civic_machine_deep_sleep = {
-	playable = { has_nomads_dlc = yes }
-	ai_playable = { has_nomads_dlc = yes }
+	playable = {
+		has_nomads_dlc = yes
+	}
+	ai_playable = {
+		has_nomads_dlc = yes
+	}
 	description = "civic_deep_sleep_effects"
-	potential = { authority = { value = auth_machine_intelligence } }
+	potential = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
 	possible = {
 		country_type = {
 			OR = {
@@ -69,11 +99,25 @@ civic_machine_deep_sleep = {
 			}
 		}
 	}
+	modification = {
+		add = {
+			always = yes
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = civic_deep_sleep_not_moddable
+				NOT = {
+					any_owned_colony = {
+						has_deposit = d_deep_sleep_cryo_pods
+					}
+				}
+			}
+		}
+	}
 	modifier = {
 		leader_lifespan_mult = 0.1
 		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
 	}
-	custom_tooltip_with_modifiers = "civic_deep_sleep_effects_additional"
 }
 civic_machine_star_seekers = {
 	modification = yes
