@@ -3678,7 +3678,7 @@ country_event = {
 	desc = "galactic_features.388.desc"
 	picture = GFX_evt_large_explosion
 	show_sound = event_space_battle
-	location = fromfrom
+	location = event_target:tiyanki_graveyard_system
 	event_chain = tiyanki_graveyard_chain
 
 	is_triggered_only = yes
@@ -3703,6 +3703,10 @@ country_event = {
 
 	immediate = {
 		remove_point_of_interest = tiyanki_gravekeepers
+		if = {
+			limit = { NOT = { exists = event_target:tiyanki_graveyard_system } }
+			fromfrom.solar_system = { save_global_event_target_as = tiyanki_graveyard_system }
+		}
 	}
 
 	option = {
